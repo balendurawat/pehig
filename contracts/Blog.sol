@@ -59,6 +59,16 @@ contract Blog {
         emit PostCreated(postId, title, hash);
     }
 
-    
+    function fetchPosts() public view returns (Post[] memory) {
+        uint itemCount = _postIds.current();
+        
+        Post[] memory posts = new Post[](itemCount);
+        for (uint i= 0; i < itemCount; i++) {
+            uint currentId = i + 1;
+            Post storage currentItem = idToPost[currentId];
+            posts[i] = currentItem;
+        }
+        return posts;
+    }
 
 }
