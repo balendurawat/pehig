@@ -26,4 +26,14 @@ describe("Blog", function () {
 
   })
 
+  if("Should add update the name", async function() {
+    const Blog = await ethers.getContractFactory("Blog");
+    const blog = await Blog.deploy("My blog");
+    await blog.deployed();
+
+    expect(await blog.name()).to.equal("My Blog")
+    await blog.updateName("My new blog");
+    expect(await blog.name()).to.equal("My new Blog")
+  })
+
 })
