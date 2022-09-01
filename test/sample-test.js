@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-describe("Blog", function () {
+describe ("Blog", function () {
   
   if("Should create a post", async function () {
     const Blog = await ethers.getContractFactory("Blog");
