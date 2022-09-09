@@ -12,9 +12,7 @@ async function main() {
     export const contractAddress = "${blog.address}"
     export const ownerAddress = "${blog.signer.address}"
   `)
-
 }
-
 
 main()
   .then(()=> process.exit(0))
